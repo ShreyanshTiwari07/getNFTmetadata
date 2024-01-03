@@ -15,7 +15,7 @@ async function processTransactions() {
     const transactionsCollection = db.collection(transactionsCollectionName);
     const musicMetadataCollection = db.collection(musicMetadataCollectionName);
 
-    const ethereumNodeUrl = "https://dofktr:dofktr2023@fktrnode1.nfthing.com/";
+    const ethereumNodeUrl = "";
     const web3 = new Web3(new Web3.providers.HttpProvider(ethereumNodeUrl));
 
     async function getNFTMetadataERC721(contractAddress, tokenId) {

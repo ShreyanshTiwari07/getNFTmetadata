@@ -158,7 +158,10 @@ async function processTransactions() {
     //   .find({ type: "music" })
     //   .toArray();
 
-    const documents = await transactionsCollection.find({}).toArray();
+    const updateTime = new Date(Date.now() - 10 * 60 * 1000).toISOString();
+    const documents = await transactionsCollection
+      .find({ createdAt: { $gte: new Date(updateTime) } })
+      .toArray();
 
     for await (const document of documents) {
       const { contract, tokenId, tokentype } = document;

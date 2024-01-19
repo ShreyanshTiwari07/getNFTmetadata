@@ -6,6 +6,7 @@ const musicMetadataSchema = new mongoose.Schema({
   name: String,
   tokenURI: String,
   artist: String,
+  image: String,
   losslessAudio: String,
   duration: Number,
 });
